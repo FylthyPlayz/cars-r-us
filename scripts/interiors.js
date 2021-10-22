@@ -3,8 +3,8 @@ import { getInteriors, setInterior } from "./database.js";
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "interior") {
-            setInterior(parseInt(clickEvent.target.value))
+        if (event.target.id === "interior") {
+            setInterior(parseInt(event.target.value))
         }
     }
 )

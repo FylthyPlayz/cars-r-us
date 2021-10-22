@@ -3,8 +3,8 @@ import { getWheels, setWheel } from "./database.js";
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "wheels") {
-            setWheel(parseInt(clickEvent.target.value))
+        if (event.target.id === "wheel") {
+            setWheel(parseInt(event.target.value))
         }
     }
 )

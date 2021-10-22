@@ -2,8 +2,18 @@ import { interiorTypes } from "./interiors.js"
 import { pickYoPaint } from "./paints.js"
 import { techTypes } from "./technologies.js"
 import { wheelTypes } from "./wheels.js"
+import { OrderButtonHTML } from "./orderbutton.js"
+import { Orders } from "./orders.js"
+import { placeOrder } from "./database.js"
 
-
+document.addEventListener(
+    "click",
+    (event) => {
+        if (event.target.id === "orderButton") {
+            placeOrder()
+        }
+    }
+)
 export const buildACar = () => {
     return `
         <h1>Cars-R-Us</h1>
@@ -24,5 +34,11 @@ export const buildACar = () => {
                 <h2>Wheels</h2>
                 ${wheelTypes()}
             </section>
-        </article>`
+            <button id="orderButton">Create Custom Order</button>
+           
+            <article class="customOrders">
+            <h2>Custom Car Orders</h2>
+            ${Orders()}
+            </article>`
+
 }
